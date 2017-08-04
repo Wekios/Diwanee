@@ -1,0 +1,433 @@
+@import "config";
+
+
+/* global selectors*/
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  outline: none;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width: 1200px) {
+    width: 90%;
+  }
+}
+.dash{
+  display: block;
+  border-bottom: red solid 1.5px;
+  width: 50px;
+  margin: 20px auto;
+}
+
+.kicker {
+  font-family: $open;
+  color: $primary-color;
+  font-size: 1.2em;
+  letter-spacing: 0.9px;
+  text-align: center;
+}
+
+.btn {
+  border-radius: 2px;
+  outline: none;
+  background: white;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 30px;
+  font-family: $roboto;
+
+  &:hover {
+    background-color: #d7d7d7;
+  }
+}
+
+h2 {
+  font-size: 3.125em;
+  font-weight: 400;
+  text-align: center;
+  color: $primary-color;
+}
+h4 {
+  font-family: $roboto;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $secondary-color;
+  margin: 80px auto 20px;
+  text-align: center;
+}
+/* kraj */
+
+body {
+  header {
+    height: 700px;
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+
+    nav.mobile-menu {
+      position: absolute;
+      top: 85px;
+      left:0;
+      height: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      transition: 0.5s all linear;
+      overflow: hidden;
+
+      a {
+        display: block;
+        text-align: center;
+        color: white;
+        font-family: $roboto;
+        font-size: 2em;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 100px 0 30px;
+      }
+
+      &.expanded {
+        height: calc( 100% - 85px );
+      }
+
+
+      @media screen and (max-width: 1025px){
+        display: block;
+      }
+    }
+
+    .container{
+      display: flex;
+      padding-top: 20px;
+
+      .mobile-toggle {
+        display: none;
+        text-align: center;
+        padding: 14px 30px;
+        text-decoration: none;
+        font-size: 30px;
+
+        @media screen and (max-width: 1025px){
+          display: block;
+        }
+      }
+      .logo {
+        background:url("../img/logo.svg") no-repeat left center;
+        min-width: 150px;
+        padding-right: 15px;
+        //width: 150px;
+        //height: 70px;
+        display: inline-block;
+        flex: 2;
+      }
+
+      nav {
+        display: inline-block;
+        vertical-align: top;
+        text-align: right;
+        flex: 10;
+        @media screen and (max-width: 1024px){
+          display: none;
+        }
+        a {
+          display: inline-block;
+          color: rgba($primary-color, 0.8);
+          font-weight: 400;
+          font-family: $roboto;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 15px ;
+          font-size: 14px;
+
+
+          &:hover {
+            color: rgba($primary-color, 1);
+          }
+        }
+      }
+    }
+    .wrapper {
+      max-width: 860px;
+      text-align: center;
+      margin: 0 auto;
+
+      h1 {
+        text-align: center;
+        font-size: 3.75em;
+        font-weight: 500 ;
+        font-family: $roboto;
+        color: $primary-color;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 150px 0 0;
+      }
+    }
+  }
+
+  section.services {
+    display: flex;
+    text-align: center;
+    @media screen and (max-width: 760px) {
+    display: block;
+    }
+    .service {
+      flex: 1;
+      padding:90px 30px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        padding: 40px 0;
+        color: $primary-color;
+        font-family: $roboto;
+        letter-spacing: 2px;
+      }
+
+      .dash {
+        display: block;
+        border-top: $secondary-color solid 1.5px;
+        border-bottom:none ;
+        width: 50px;
+        padding: 20px 0;
+        margin: 0 auto;
+      }
+      p {
+        font-family: $roboto;
+        color: $secondary-color;
+        font-weight: 400;
+        padding: 0 1em;
+      }
+
+      &.trougao {
+        .service-img {
+          background:url("../img/trougao.png") no-repeat center;
+          background-size:contain;
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+        }
+      }
+      &.krug {
+        background: #ededed;
+        .service-img {
+        background:url("../img/krug.png") no-repeat center;
+        background-size:contain;
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+
+        }
+      }
+      &.kocka {
+        .service-img {
+        background:url("../img/kocka.png") no-repeat center;
+        background-size:contain;
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+
+        }
+      }
+    }
+  }
+
+  section.work {
+    .container {
+      .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 265px;
+        margin: 20px 5px;
+
+        .ad{
+          flex: 10;
+
+          p {
+            font-family: $roboto;
+            font-size: 1em;
+            color: $primary-color;
+          }
+
+          .text-border {
+            display: inline-block;
+            border: gray solid 1px;
+            border-radius: 3px;
+            margin: 20px 10px 10px 0;
+            padding: 7px 15px;
+            color: red;
+            width: 80px;
+            @media screen and (max-width: 460px){
+              border: none;
+            }
+          }
+        }
+        .button{
+          flex:2;
+          padding:50px;
+          @media screen and (max-width: 760px){
+            display: none;
+          }
+          }
+        }
+      }
+    .ribbon{
+      background-color: $primary-color;
+      padding: 15px 2px;
+
+      .container .wrapper .ad p {
+        color:white;
+      }
+      .container .wrapper .ad .text-border {
+        border: white solid 1px;
+        color: white;
+        @media screen and (max-width: 460px){
+          border: none;
+        }
+      }
+      .container .wrapper .button .btn {
+        background: $primary-color;
+        border: 1px solid white;
+        color: white;
+
+        @media screen and (max-width: 760px){
+          display: none;
+        }
+        &:hover {
+          color: #d7d7d7;
+        }
+      }
+    }
+    .end-button {
+      text-align: center;
+      margin-top:100px;
+    }
+  }
+
+  section.about {
+    background-color: #f2f2f2;
+    margin-top: 200px;
+    .container {
+      .wrapper {
+        padding: 90px 0;
+        .info {
+          font-family: $roboto;
+          font-weight: 400;
+          font-size: 1.5em;
+          color: $secondary-color;
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+
+  section.social {
+    padding: 100px 0 50px;
+    .social-icons {
+      text-align: center;
+      .twitter {
+        background:url("../img/twitter.png") no-repeat center;
+        background-size:contain;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+      }
+      .face {
+        background:url("../img/face.png") no-repeat center;
+        background-size:contain;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+      }
+    }
+  }
+
+  section.contact {
+    background-color: $primary-color;
+
+    .container {
+     .wrapper {
+       display: flex;
+
+       @media screen and (max-width: 460px){
+         display: inline;
+       }
+       .map {
+         flex: 4;
+         padding: 100px 6% 100px 6%;
+
+         img {
+           background-repeat: no-repeat;
+           background-size: contain;
+           width:18px;
+           height:24px;
+           padding: 0 10px 15px 0;
+         }
+         h5 {
+           display: inline;
+           vertical-align: top;
+           color: white;
+           font-family: $roboto;
+           font-weight: 400;
+           font-size: 1em;
+           text-transform: uppercase;
+         }
+
+         p {
+           font-family: $roboto;
+           font-size: 0.99em;
+           color: $secondary-color;
+         }
+       }
+     }
+    }
+  }
+
+  footer {
+    height: 70px;
+    background-color: #1e1e1e;
+    display: flex;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .copyright {
+        flex: 8;
+        color: $secondary-color;
+        font-size: 0.7em;
+      }
+
+      .hyper-icons {
+        flex: 4;
+        text-align: center;
+
+
+        a {
+          text-decoration: none;
+          color: $secondary-color;
+          vertical-align: top;
+          padding-right: 30px;
+
+          img {
+            display: inline-block;
+            background-size: contain;
+            width: 32px;
+          }
+        }
+      }
+    }
+  }
+}
